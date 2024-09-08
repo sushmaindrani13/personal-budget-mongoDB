@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     
     <!-- This is an SEO Change -->
+    <!-- Added a <meta name="robots"> tag to allow search engines to index and follow links. -->
     <meta name="robots" content="index, follow">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- This is an SEO Change -->
+    <!-- Improved <title> with more descriptive keywords: "Personal Budget - Free Budget Tracking App". -->
     <title>Personal Budget - Free Budget Tracking App</title>
     
     <meta name="description" content="A free personal budget app to help you manage your finances effectively.">
+    <!-- Enhanced <meta> description to provide better clarity for search engines: "A free personal budget app to help you manage your finances effectively." -->
     
     <meta name="keywords" content="app, free, budget, finance, personal finance, budgeting app">
     
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
     <!-- This is an SEO Change -->
+    <!-- Added a canonical link: This prevents duplicate content issues by specifying the preferred URL (canonical) for search engines to index. -->
     <link rel="canonical" href="https://example.com/personal-budget-app" />
 
 </head>
 <body>
 
 <!-- This is an A11y Change -->
+<!-- Added aria-label for the "Skip to content" link to improve clarity for screen readers. -->
 <a href="#main" class="skip" aria-label="Skip to main content">Skip to content</a>
 
 <!-- This is a Semantic HTML Change -->
+<!-- Added a <header> around the <nav> element. -->
 <header>
     <nav>
         <ul>
@@ -39,6 +45,7 @@
 </header>
 
 <!-- This is a Semantic HTML Change -->
+<!-- Replaced <div class="hero"> with <section class="hero">. -->
 <section class="hero">
     <h1>Personal Budget</h1>
     <h2>A personal-budget management app</h2>
@@ -49,6 +56,7 @@
     <div class="page-area">
 
         <!-- This is a Semantic HTML Change -->
+        <!-- Used <article> to wrap distinct content sections. -->
         <article>
             <h1>Stay on track</h1>
             <p>
@@ -93,6 +101,7 @@
 </main>
 
 <!-- This is an A11y Change -->
+<!-- Added aria-label to the <footer> to define the role of the footer for screen readers. -->
 <footer class="bottom" aria-label="Footer content">
     <div class="center">
         All rights reserved &copy; Fabio Nolasco
@@ -101,7 +110,7 @@
 
 <!-- This is an A11y Change -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous" defer></script>
-
+<!-- Added defer attribute to the JavaScript files to improve page load performance. -->
 <!-- This is an A11y Change -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous" defer></script>
 
@@ -145,155 +154,3 @@
 
 </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Budget</title>
-    <meta name="description" content="A free personal budger app">
-    <meta name="keywords" content="app free budget finance">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-
-<a href="#main" class="skip">Skip to content</a>
-
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/login.html">Login</a></li>
-            <li><a href="https://google.com">Google</a></li>
-        </ul>
-    </nav>
-
-    <div class="hero">
-        <h1>Personal Budget</h1>
-        <h2>A personal-budget management app</h2>
-    </div>
-
-    <main class="center" id="main">
-
-        <div class="page-area">
-
-            <article>
-                <h1>Stay on track</h1>
-                <p>
-                    Do you know where you are spending your money? If you really stop to track it down,
-                    you would get surprised! Proper budget management depends on real data... and this
-                    app will help you with that!
-                </p>
-            </article>
-    
-            <article>
-                <h1>Alerts</h1>
-                <p>
-                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-                </p>
-            </article>
-    
-            <article>
-                <h1>Results</h1>
-                <p>
-                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
-                    Also, they to live happier lives... since they expend without guilt or fear... 
-                    because they know it is all good and accounted for.
-                </p>
-            </article>
-    
-            <article>
-                <h1>Free</h1>
-                <p>
-                    This app is free!!! And you are the only one holding your data!
-                </p>
-            </article>
-    
-            <article>
-                <h1>Stay on track</h1>
-                <p>
-                    Do you know where you are spending your money? If you really stop to track it down,
-                    you would get surprised! Proper budget management depends on real data... and this
-                    app will help you with that!
-                </p>
-            </article>
-    
-            <article>
-                <h1>Alerts</h1>
-                <p>
-                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-                </p>
-            </article>
-    
-            <article>
-                <h1>Results</h1>
-                <p>
-                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
-                    Also, they to live happier lives... since they expend without guilt or fear... 
-                    because they know it is all good and accounted for.
-                </p>
-            </article>
-    
-            <article>
-                <h1>Chart</h1>
-                <p>
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                </p>
-            </article>
-
-        </div>
-
-    </main>
-
-    <footer class="bottom">
-        <div class="center">
-            All rights reserved &copy; Fabio Nolasco
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
-
-    <script>
-        var dataSource = {
-                datasets: [
-                    {
-                        data: [],
-                        backgroundColor: [
-                            '#ffcd56',
-                            '#ff6384',
-                            '#36a2eb',
-                            '#fd6b19',
-                        ]
-                    }
-                ],
-                labels: []
-            };
-
-        function createChart() {
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myPieChart = new Chart(ctx, {
-                type: 'pie',
-                data: dataSource
-            });
-        }
-
-        function getBudget() {
-            axios.get('http://localhost:3000/budget')
-            .then(function (res) {
-                for (var i = 0; i < res.data.myBudget.length; i++) {
-                    dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-                    dataSource.labels[i] = res.data.myBudget[i].title;
-                    createChart();
-                }
-            });
-        }
-
-        getBudget();
-    </script>
-
-</body>
-</html> -->
