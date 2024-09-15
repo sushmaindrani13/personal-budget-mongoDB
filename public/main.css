@@ -94,7 +94,7 @@ footer {
     text-align: center;
 }
 
-section article {
+main article,figure{
     display: inline-block;
     width: 100%;
     max-width: 340px;
@@ -103,7 +103,7 @@ section article {
 }
 
 @media screen and (min-width: 768px) {
-    section article {
+    main article{
         margin: 10px;
     }
 }

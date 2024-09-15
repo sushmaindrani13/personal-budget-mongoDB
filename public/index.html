@@ -51,14 +51,10 @@
     <h2>A personal-budget management app</h2>
 </section>
 
-<!-- This is a Semantic HTML Change -->
-<!-- Changed main to section for better relate the articles -->
-<section class="center" id="main">
+<main class="center" id="main">
 
     <div class="page-area">
 
-        <!-- This is a Semantic HTML Change -->
-        <!-- Used <article> to wrap distinct content sections. -->
         <article>
             <h1>Stay on track</h1>
             <p>
@@ -90,13 +86,14 @@
                 This app is free!!! And you are the only one holding your data!
             </p>
         </article>
-
-        <article>
+        <!-- This is a Semantic HTML Change -->
+        <!-- Figure makes more meaning as we are displaying chart init. -->
+        <figure>
             <h1 id="chart">Chart</h1>
             <p>
                 <canvas id="myChart" width="400" height="400"></canvas>
             </p>
-        </article>
+        </figure>
         <!-- svg container for d3 chart -->
         <div>
             <h1>D3.js</h1>
@@ -106,7 +103,7 @@
 
     </div>
 
-</section>
+</main>
 
 <!-- This is an A11y Change -->
 <!-- Added aria-label to the <footer> to define the role of the footer for screen readers. -->
@@ -165,49 +162,6 @@
     getBudget();
 </script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
-    var dataSource = {
-        datasets: [
-            {
-                data: [],
-                backgroundColor: [
-                    '#ffcd56',
-                    '#ff6384',
-                    '#36a2eb',
-                    '#fd6b19',
-                    '#4bc0c0',
-                    '#9966ff',
-                    '#ff9f40'
-                ]
-            }
-        ],
-        labels: []
-    };
-
-    function createChart() {
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myPieChart = new Chart(ctx, {
-            type: 'pie',
-            data: dataSource
-        });
-    }
-
-    function getBudget() {
-        axios.get('http://localhost:3000/budget')
-        .then(function (res) {
-            for (var i = 0; i < res.data.myBudget.length; i++) {
-                dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-                dataSource.labels[i] = res.data.myBudget[i].title;
-                
-            }
-            console.log(dataSource)
-            createChart();
-        });
-    }
-
-    getBudget();
-</script>
-
 
 <!-- Code for D3 chart -->
 <script>
@@ -245,13 +199,13 @@
 
     var color = d3.scale.ordinal()
         .domain(["Eat out", "Rent", "Grocery", "Shopping", "Entertainment", "Utilities", "Travel"])
-        .range([     '#ffcd56',
-                    '#ff6384',
-                    '#36a2eb',
-                    '#fd6b19',
-                    '#4bc0c0',
-                    '#9966ff',
-                    '#ff9f40']);
+        .range([     "#FF5733",  
+                        "#33FF57",  
+                        "#3357FF",  
+                        "#FF33A6",  
+                        "#FFD700",  
+                        "#800080",  
+                        "#00CED1" ]);
 
     axios.get('/budget').then(res => {
         var data = res.data.myBudget.map(obj => {
