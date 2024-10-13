@@ -120,23 +120,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
 
 <script>
-    var dataSource = {
-            datasets: [
-                {
-                    data: [],
-                    backgroundColor: [
-                        "#FF5733",  
-                        "#33FF57",  
-                        "#3357FF",  
-                        "#FF33A6",  
-                        "#FFD700",  
-                        "#800080",  
-                        "#00CED1"   
-                    ]
-                }
-            ],
-            labels: []
-        };
+   var dataSource = {
+    datasets: [
+        {
+            data: [],  // Values for each budget item
+            backgroundColor: [
+                "#FF5733",  // Color for data point 1
+                "#33FF57",  // Color for data point 2
+                "#3357FF",  // Color for data point 3
+                "#FF33A6",  // Color for data point 4
+                "#FFD700",  // Color for data point 5
+                "#00CED1",  // Color for data point 6
+                "#1E90FF"   // Color for data point 7
+            ]
+        }
+    ],
+    labels: []  // Titles of each budget item
+};
+
 
     function createChart() {
         var ctx = document.getElementById('myChart').getContext('2d');
@@ -150,9 +151,10 @@
     function getBudget() {
         axios.get('http://localhost:3000/budget')
         .then(function (res) {
-            for (var i = 0; i < res.data.myBudget.length; i++) {
-                dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-                dataSource.labels[i] = res.data.myBudget[i].title;
+            console.log(res);
+            for (var i = 0; i < res.data.length; i++) {
+                dataSource.datasets[0].data[i] = res.data[i].value;
+                dataSource.labels[i] = res.data[i].title;
                 
             }
             createChart();
@@ -198,18 +200,23 @@
     var key = function(d){ return d.data.label; };
 
     var color = d3.scale.ordinal()
-        .domain(["Eat out", "Rent", "Grocery", "Shopping", "Entertainment", "Utilities", "Travel"])
-        .range([     "#FF5733",  
-                        "#33FF57",  
-                        "#3357FF",  
-                        "#FF33A6",  
-                        "#FFD700",  
-                        "#800080",  
-                        "#00CED1" ]);
+    .domain(["rent", "wifi", "shopping", "Entertainment", "Utilities", "Travel", "Eat out"])
+    .range([
+        "#FF5733",  
+        "#33FF57",  
+        "#3357FF",  
+        "#FF33A6", 
+        "#1E90FF" , 
+        "#FFD700",  
+        "#00CED1",  
+          
+    ]);
+
+
 
     axios.get('/budget').then(res => {
-        var data = res.data.myBudget.map(obj => {
-            return {label: obj.title, value: obj.budget}
+        var data = res.data.map(obj => {
+            return {label: obj.title, value: obj.value}
         })
         change(data);
     })
